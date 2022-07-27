@@ -3,6 +3,19 @@ import { Flex } from "@chakra-ui/react";
 import { Doughnut } from "react-chartjs-2";
 import "chart.js/auto";
 
+export const options = {
+  responsive: true,
+  plugins: {
+    legend: {
+      position: "top",
+    },
+    title: {
+      display: true,
+      text: "Seller Overall Rating chart",
+    },
+  },
+};
+
 const data = {
   labels: [
     "Seller Profile",
@@ -42,7 +55,7 @@ const data = {
 export default function RatingChart() {
   return (
     <Flex width={400} height={400}>
-      <Doughnut data={data} />
+      <Doughnut data={data} options={options} />
     </Flex>
   );
 }

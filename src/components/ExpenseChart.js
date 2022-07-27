@@ -4,6 +4,18 @@ import { Flex } from "@chakra-ui/react";
 import { Pie } from "react-chartjs-2";
 import "chart.js/auto";
 
+export const options = {
+  responsive: true,
+  plugins: {
+    legend: {
+      position: "top",
+    },
+    title: {
+      display: true,
+      text: "Seller Expense Chart",
+    },
+  },
+};
 const ChartData = {
   maintainAspectRatio: false,
 
@@ -35,7 +47,7 @@ const ChartData = {
 export default function ExpenseChart() {
   return (
     <Flex width={400} height={400}>
-      <Pie data={ChartData} />
+      <Pie data={ChartData} options={options} />
     </Flex>
   );
 }
